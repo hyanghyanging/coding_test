@@ -11,11 +11,11 @@ pick_comb = [*combinations(lottery, m)]  # 모든 숫자 조합
 
 winning = 0
 
-# 당첨 조합 개수 세기
+# 당첨 조합 개수
 for pick in pick_comb:
     for win_comb in combinations(lottery,m):
         cnt = len(set(pick) & set(win_comb))   # 맟춘 숫자의 개수
-        if cnt >= k:
+        if cnt >= k:                # 적어도 k개의 수가 같은지 확인
             winning += 1
 
 # 전체 조합 개수
