@@ -8,10 +8,9 @@ while n >= 0:
         bag += n//5
         print(bag)
         break
-    
+
     n -= 3
     bag +=1
 
 else:
-    bag = -1
-    print(bag)
+    print(-1)
