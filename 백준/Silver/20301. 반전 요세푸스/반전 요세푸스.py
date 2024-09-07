@@ -3,7 +3,6 @@ from collections import deque
 
 N, K, M = map(int, sys.stdin.readline().split())
 array = deque([i for i in range(1, N+1)])
-result = []
 direction = 1   # 시계방향 : 1, 반시계방향 : -1
 remove_num = 0    # 제거된 횟수 기록
 
@@ -13,12 +12,11 @@ while array:
     else:
         array.rotate(K)        # 시계방향으로 K칸 이동
 
-    result.append(array.popleft())
+    result = array.popleft()
     remove_num += 1
 
     # M번째 제거 마다 방향 전환
     if remove_num % M == 0:
         direction *= -1
-
-for num in result:
-    print(num)
+    
+    print(result)
