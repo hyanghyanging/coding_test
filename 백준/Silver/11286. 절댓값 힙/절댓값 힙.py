@@ -1,0 +1,21 @@
+import sys
+import heapq
+'''
+절대값 힙 : tuple 활용 (절대값, 원래값)
+'''
+n = int(sys.stdin.readline())
+heap = []
+
+for _ in range(n):
+    x = int(sys.stdin.readline())
+
+    # x가 0이면 배열에서 절대값이 가장 작은 값 출력
+    if x == 0:
+        if heap:
+            print(heapq.heappop(heap)[1])
+        else:
+            print(0)
+    
+    # x가 0이 아니라면 배열에 x 푸쉬
+    else:
+        heapq.heappush(heap, (abs(x), x))
